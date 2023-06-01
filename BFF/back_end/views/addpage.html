@@ -1,0 +1,31 @@
+{{extend './layout.html'}}
+
+{{block 'title'}}Book{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/css/index.css">
+{{/block}}
+
+
+{{block 'content'}}
+<div class="content">
+    <h1>{{msg}}</h1>
+
+    <form action="/add" method="post">
+        <h5>书名：</h5>
+        <input class="form-control" type="text" name="name">
+        <h5>作者：</h5>
+        <input class="form-control" type="text" name="author">
+        <h5>分类：</h5>
+        <input class="form-control" type="text" name="category">
+        <h5>描述：</h5>
+        <input class="form-control" type="text" name="description">
+        <button type="submit" class="btn btn-primary" style="margin-top:10px">添加</button>
+    </form>
+    
+</div>
+{{/block}}
+
+{{block 'script'}}
+
+{{/block}}

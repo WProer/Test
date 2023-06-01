@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- jquery -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- art-template -->
+    <script src="https://cdn.staticfile.org/art-template/4.13.2/lib/template-web.js"></script>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js"></script>
+
+    <!-- 使用toastr通知提示插件 -->
+    <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./scripts/index.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <h1 class="Adminh1">图书管理系统</h1>
+            <a class="btn btn-primary" href="javascript:;" id="add">添加图书</a>
+            <div id="TableDiv">
+                <table class="table table-bordered border-primary table-striped table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>书名</th>
+                            <th>作者</th>
+                            <th>分类</th>
+                            <th>描述</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal fade myModal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">新增</h4>
+                    <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close"
+                        style="border: none; height: 15px;width: 15px; display: flex; justify-content: center;align-items: center;"><span
+                            style="font-size: 12px;" aria-hidden="true">&times;</span></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="txt_departmentname">书名</label>
+                            <input type="text" name="name" class="form-control" id="txt_departmentname"
+                                placeholder="书名">
+                        </div>
+                        <div class="form-group">
+                            <label for="txt_parentdepartment">作者</label>
+                            <input type="text" name="author" class="form-control" id="txt_parentdepartment"
+                                placeholder="作者">
+                        </div>
+                        <div class="form-group">
+                            <label for="txt_departmentlevel">分类</label>
+                            <input type="text" name="category" class="form-control" id="txt_departmentlevel"
+                                placeholder="分类">
+                        </div>
+                        <div class="form-group">
+                            <label for="txt_statu">描述</label>
+                            <input type="text" name="description" class="form-control" id="txt_statu" placeholder="状态">
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" id="btn_submit" class="btn btn-primary"><span
+                            class="glyphicon glyphicon-floppy-disk"></span>提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模板 -->
+    <script type="text/template" id="template">
+        {{each data}}
+        <tr>
+            <td>{{$value.id}}</td>
+            <td>{{$value.name}}</td>
+            <td>{{$value.author}}</td>
+            <td>{{$value.category}}</td>
+            <td>{{$value.description}}</td>
+            <td class="edit">
+                <a href="javascript:;">修改</a>|
+                <a href="javascript:;">删除</a>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+{{extend './layout.html'}}
+
+{{block 'title'}}图书管理{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/css/index.css">
+{{/block}}
+
+
+{{block 'content'}}
+<div class="content">
+    <h1 class="Adminh1">{{title}}</h1>
+    <a class="btn btn-primary" href="/addpage">添加图书</a>
+    <div id="TableDiv">
+        <table class="table table-bordered border-primary table-striped table-hover">
+            <thead class="table-primary">
+                <tr>
+                    <th>ID</th>
+                    <th>书名</th>
+                    <th>作者</th>
+                    <th>分类</th>
+                    <th>描述</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each data}}
+                <tr>
+                    <td>{{$value.id}}</td>
+                    <td>{{$value.name}}</td>
+                    <td>{{$value.author}}</td>
+                    <td>{{$value.category}}</td>
+                    <td>{{$value.description}}</td>
+                    <td>
+                        <a href="/editpage?editid={{$value.id}}">修改</a>|
+                        <a href="/deletepage?deleteid={{$value.id}}">删除</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr>
+<div id="app">
+    <h2>[[msg]]</h2>
+    <input type="text" v-model="msg">
+</div>
+
+<hr>
+{{/block}}
+
+{{block 'script'}}
+<script src="/scripts/index.js"></script>
+{{/block}}

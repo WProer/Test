@@ -1,0 +1,30 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server:dev": "cross-env NODE_ENV=development nodemon app.js",
+    "build": "babel ./assets/scripts/es.js -o ./assets/scripts/es_bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/plugin-transform-modules-systemjs": "^7.20.11",
+    "art-template": "^4.13.2",
+    "axios": "^1.4.0",
+    "cross-env": "^7.0.3",
+    "koa": "^2.14.2",
+    "koa-art-template": "^1.1.1",
+    "koa-body": "^6.0.1",
+    "koa-simple-router": "^0.2.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.21",
+    "log4js": "^6.9.1",
+    "mysql": "^2.18.1"
+  }
+}

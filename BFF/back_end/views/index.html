@@ -1,0 +1,26 @@
+{{extend './layout.html'}}
+
+{{block 'title'}}Book{{/block}}
+
+{{block 'head'}}
+<link rel="stylesheet" href="/css/index.css">
+{{/block}}
+
+
+{{block 'content'}}
+<h1>{{data.msg}}</h1>
+
+<hr>
+<div id="app">
+    <h2>[[msg]]</h2>
+    <input type="text" v-model="msg">
+</div>
+
+<hr>
+
+<img src="/images/staticimg.jpg" alt="" srcset="">
+{{/block}}
+
+{{block 'script'}}
+<script src="/scripts/index.js"></script>
+{{/block}}

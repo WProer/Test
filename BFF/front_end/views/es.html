@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Hello Nodejs</h2>
+    <script type="module" src="https://cdn.bootcdn.net/ajax/libs/systemjs/6.14.1/system.min.js"></script>
+    <script type="module">
+        System.import('/scripts/es_bundle.js').then(_ => {
+            console.log(222);
+            let Persen = _.default;
+            let persen = new Persen;
+
+            persen.fn();
+        })
+    </script>
+</body>
+
+</html>
